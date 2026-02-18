@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <!-- v26492 -->
+
+
+  <title>File Library Guide &ndash; Transparency Platform</title>
+
+  
+
+  <meta name="description" content="1. WelcomeThe data available on the ENTSO-E Transparency Platform (https://transparency.entsoe.eu) can also be accessed through CSV..." /><meta property="og:image" content="https://transparencyplatform.zendesk.com/hc/theming_assets/01HZPZ1KARCS74JZ8217B3F3VD" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Transparency Platform" />
+<meta property="og:title" content="File Library Guide" />
+<meta property="og:description" content="1. WelcomeThe data available on the ENTSO-E Transparency Platform (https://transparency.entsoe.eu) can also be accessed through CSV extracts, which offer a convenient bulk download option. Unlike t..." />
+<meta property="og:url" content="https://transparencyplatform.zendesk.com/hc/en-us/articles/35960137882129-File-Library-Guide" />
+<link rel="canonical" href="https://transparencyplatform.zendesk.com/hc/en-us/articles/35960137882129-File-Library-Guide">
+<link rel="alternate" hreflang="en-us" href="https://transparencyplatform.zendesk.com/hc/en-us/articles/35960137882129-File-Library-Guide">
+<link rel="alternate" hreflang="x-default" href="https://transparencyplatform.zendesk.com/hc/en-us/articles/35960137882129-File-Library-Guide">
+
+  <link rel="stylesheet" href="//static.zdassets.com/hc/assets/application-3566fe63d022e25f84041ca8d54a727b.css" media="all" id="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="/hc/theming_assets/36797/10000260229652/style.css?digest=38209385873169">
+
+  <link rel="icon" type="image/x-icon" href="/hc/theming_assets/01HZPZ1KEM1BX1ATHNG5X7EAEK">
+
+    
+    
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<!-- Make the translated search clear button label available for use in JS -->
+<!-- See buildClearSearchButton() in script.js -->
+<script type="text/javascript">window.searchClearButtonLabelLocalized = "Clear search";</script>
+<script type="text/javascript">
+  // Load ES module polyfill only for browsers that don't support ES modules
+  if (!(HTMLScriptElement.supports && HTMLScriptElement.supports('importmap'))) {
+    document.write('<script async src="/hc/theming_assets/01J917TX8PRX5VJJ0Y63MM8QVB"><\/script>');
+  }
+</script>
+<script type="importmap">
+{
+  "imports": {
+    "new-request-form": "/hc/theming_assets/01K2CCC94DF6ZR82RRWMBR34T9",
+    "flash-notifications": "/hc/theming_assets/01K2CCC8ZZVP7YAVWGFEF7MHKS",
+    "service-catalog": "/hc/theming_assets/01K2CCC8W71BYGCA9D884V71JS",
+    "approval-requests": "/hc/theming_assets/01K2ZKN673Q2WWJQ12JSTTKJG0",
+    "approval-requests-translations": "/hc/theming_assets/01K2CCC91VR916ENY03JT5AM9D",
+    "new-request-form-translations": "/hc/theming_assets/01K2CCC95GDPEZ54E87Q464JR2",
+    "service-catalog-translations": "/hc/theming_assets/01K2CCC8ZDM0ZTW6YDK2GXVP9D",
+    "shared": "/hc/theming_assets/01K2CCC940GJRH0VRX0XC01KF3",
+    "ticket-fields": "/hc/theming_assets/01K2CCC92HE8GGZKH30SW8T4HR",
+    "wysiwyg": "/hc/theming_assets/01K2CCC96HA33G7QGRRAB87JYR"
+  }
+}
+</script>
+<script type="module">
+  import { renderFlashNotifications } from "flash-notifications";
+
+  const settings = {"brand_color":"#17494D","brand_text_color":"#FFFFFF","text_color":"#2F3941","link_color":"#1F73B7","hover_link_color":"#0F3554","visited_link_color":"#9358B0","background_color":"#FFFFFF","heading_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif","text_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif","logo":"/hc/theming_assets/01HZPZ1KARCS74JZ8217B3F3VD","show_brand_name":true,"favicon":"/hc/theming_assets/01HZPZ1KEM1BX1ATHNG5X7EAEK","homepage_background_image":"/hc/theming_assets/01HZPZ1MKYY6YJH9EFQ7330EF2","community_background_image":"/hc/theming_assets/01HZPZ1NKWKGBHGR2YB1VVMTN4","community_image":"/hc/theming_assets/01HZPZ1PPPFJBWSZAMBGQQ5CYP","instant_search":true,"scoped_kb_search":true,"scoped_community_search":true,"show_recent_activity":true,"show_articles_in_section":true,"show_article_author":false,"show_article_comments":true,"show_follow_article":true,"show_recently_viewed_articles":true,"show_related_articles":true,"show_article_sharing":false,"show_follow_section":true,"show_follow_post":false,"show_post_sharing":false,"show_follow_topic":false,"request_list_beta":false};
+  const baseLocale = "en-us";
+
+  renderFlashNotifications(settings, baseLocale);
+</script>
+
+  
+</head>
+<body class="">
+  
+  
+  
+
+  <a class="skip-navigation" tabindex="1" href="#main-content">Skip to main content</a>
+
+<header class="header">
+  <div class="logo">
+    <a title="Home" href="/hc/en-us">
+      <img src="/hc/theming_assets/01HZPZ1KARCS74JZ8217B3F3VD" alt="Transparency Platform Help Center home page" />
+      
+        <span aria-hidden="true">Transparency Platform</span>
+      
+    </a>
+  </div>
+
+  <div class="nav-wrapper-desktop">
+    <nav class="user-nav" id="user-nav" aria-label="User navigation">
+      <ul class="user-nav-list">
+        <li></li>
+        <li></li>
+        <li><a class="submit-a-request" href="/hc/en-us/requests/new">Submit a request</a></li>
+        
+          <li>
+            <a class="sign-in" rel="nofollow" data-auth-action="signin" title="Opens a dialog" role="button" href="/hc/en-us/signin?return_to=https%3A%2F%2Ftransparencyplatform.zendesk.com%2Fhc%2Fen-us%2Farticles%2F35960137882129-File-Library-Guide">
+              Sign in
+            </a>
+          </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+
+  <div class="nav-wrapper-mobile">
+    <button class="menu-button-mobile" aria-controls="user-nav-mobile" aria-expanded="false" aria-label="Toggle navigation menu">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-menu">
+        <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13"/>
+      </svg>
+    </button>
+    <nav class="menu-list-mobile" id="user-nav-mobile" aria-expanded="false">
+      <ul class="menu-list-mobile-items">
+        
+          <li class="item">
+            <a rel="nofollow" data-auth-action="signin" title="Opens a dialog" role="button" href="/hc/en-us/signin?return_to=https%3A%2F%2Ftransparencyplatform.zendesk.com%2Fhc%2Fen-us%2Farticles%2F35960137882129-File-Library-Guide">
+              Sign in
+            </a>
+          </li>
+          <li class="nav-divider"></li>
+        
+        <li class="item"></li>
+        <li class="item"><a class="submit-a-request" href="/hc/en-us/requests/new">Submit a request</a></li>
+        <li class="item"></li>
+        <li class="nav-divider"></li>
+        
+      </ul>
+    </nav>
+  </div>
+
+</header>
+
+
+  <main role="main">
+    <div class="container-divider"></div>
+<div class="container">
+  <div class="sub-nav">
+    <nav aria-label="Current location">
+  <ol class="breadcrumbs">
+    
+      <li>
+        
+          <a href="/hc/en-us">Transparency Platform</a>
+        
+      </li>
+    
+      <li>
+        
+          <a href="/hc/en-us/categories/13771885458964-Guides">Guides</a>
+        
+      </li>
+    
+      <li>
+        
+          <a href="/hc/en-us/sections/36528267409169-File-Library-guides">File Library guides</a>
+        
+      </li>
+    
+  </ol>
+</nav>
+
+    <div class="search-container">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
+        <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
+        <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
+      </svg>
+      <form role="search" class="search" data-search="" action="/hc/en-us/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" autocomplete="off" /><input type="hidden" name="category" id="category" value="13771885458964" autocomplete="off" />
+<input type="search" name="query" id="query" placeholder="Search" aria-label="Search" /></form>
+    </div>
+  </div>
+
+  <div class="article-container" id="article-container">
+    <aside class="article-sidebar" aria-labelledby="section-articles-title">
+      
+        <div class="collapsible-sidebar">
+          <button type="button" class="collapsible-sidebar-toggle" aria-labelledby="section-articles-title" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="collapsible-sidebar-toggle-icon chevron-icon">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="collapsible-sidebar-toggle-icon x-icon">
+              <path stroke="currentColor" stroke-linecap="round" d="M3 9l6-6m0 6L3 3"/>
+            </svg>
+          </button>
+          <span id="section-articles-title" class="collapsible-sidebar-title sidenav-title">
+            Articles in this section
+          </span>
+          <div class="collapsible-sidebar-body">
+            <ul>
+              
+                <li>
+                  <a href="/hc/en-us/articles/38943763721105-How-to-list-folder-content-from-FMS-via-Python" 
+                     class="sidenav-item "
+                     >
+                       How to list folder content from FMS via Python
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/hc/en-us/articles/38725612624913-Checklist-for-SFTP-FMS-Connection-Issues" 
+                     class="sidenav-item "
+                     >
+                       Checklist for SFTP / FMS Connection Issues
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/hc/en-us/articles/36528661436049-How-to-download-a-file-from-the-Transparency-Platform-File-Library-via-a-bat-script-cURL-version" 
+                     class="sidenav-item "
+                     >
+                       How to download a file from the Transparency Platform File Library via a bat script (cURL version)
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/hc/en-us/articles/36528577508625-Making-an-API-Request-Using-cURL" 
+                     class="sidenav-item "
+                     >
+                       Making an API Request Using cURL
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/hc/en-us/articles/36523801579025-How-to-download-file-from-FMS-via-Python" 
+                     class="sidenav-item "
+                     >
+                       How to download file from FMS via Python
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/hc/en-us/articles/35960137882129-File-Library-Guide" 
+                     class="sidenav-item current-article"
+                     aria-current="page">
+                       File Library Guide
+                  </a>
+                </li>
+              
+            </ul>
+            
+          </div>
+        </div>
+      
+    </aside>
+
+    <article id="main-content" class="article">
+      <header class="article-header">
+        <h1 title="File Library Guide" class="article-title">
+          File Library Guide
+          
+        </h1>
+
+        <div class="article-author">
+          
+          <div class="article-meta">
+            
+
+            <div class="meta-group">
+              
+                <span class="meta-data"><time datetime="2025-09-23T08:16:16Z" title="2025-09-23T08:16:16Z" data-datetime="relative">September 23, 2025 08:16</time></span>
+                <span class="meta-data">Updated</span>
+              
+            </div>
+          </div>
+        </div>
+
+        
+          <div class="article-subscribe"><div data-helper="subscribe" data-json="{&quot;item&quot;:&quot;article&quot;,&quot;url&quot;:&quot;/hc/en-us/articles/35960137882129-File-Library-Guide/subscription.json&quot;,&quot;follow_label&quot;:&quot;Follow&quot;,&quot;unfollow_label&quot;:&quot;Unfollow&quot;,&quot;following_label&quot;:&quot;Following&quot;,&quot;can_subscribe&quot;:true,&quot;is_subscribed&quot;:false}"></div></div>
+        
+      </header>
+
+      <section class="article-info">
+        <div class="article-content">
+          <div class="article-body"><h1 id="h_01JX2949KQ7X55J0YKPA9JQHNJ"><strong>1. Welcome</strong></h1><p>The data available on the <strong>ENTSO-E Transparency Platform</strong>&nbsp;(<a href="https://transparency.entsoe.eu/">https://transparency.entsoe.eu</a>) can also be accessed through CSV extracts, which offer a convenient bulk download option. Unlike the individual CSV exports available directly from the data views on the website, these extracts allow users to retrieve larger datasets more efficiently. This guide provides detailed references to the extract specifications, along with step-by-step instructions on how to download the datasets.</p><p>If you have any questions or need assistance regarding the Transparency Platform, please contact our <strong>Service Desk</strong> at <a href="mailto:transparency@entsoe.eu">transparency@entsoe.eu</a>.</p><p>&nbsp;</p><h1 id="h_01JX28CA7X31NZ3BZXRGZV6TCE"><strong>2. Access from the website</strong></h1><ol>
+<li>Log in (<a href="https://newtransparency.entsoe.eu/">https://newtransparency.entsoe.eu/</a> - a temporary link which will be replaced by <a href="https://transparency.entsoe.eu/">https://transparency.entsoe.eu</a> in the following weeks):<br><img src="/hc/article_attachments/35966039471889" width="308" height="119">
+</li>
+<li>Navigate to File Library:<br><img src="/hc/article_attachments/35966039050769" alt="Picture3.png">
+</li>
+<li>Searching for files:<ol>
+<li>In the Table mode<br><img src="/hc/article_attachments/35966039476497" alt="Picture1.png">
+</li>
+<li>In the File Browser mode:<br><img src="/hc/article_attachments/35966039054865" alt="Picture2.png">
+</li>
+</ol>
+</li>
+<li>Download the file:<br><img src="/hc/article_attachments/35966742934033" width="344" height="152">
+</li>
+</ol><h1 id="h_01JX28JE0A38SKND6KX3N7SDRM"><strong>3. Downloading File Library Extracts using API</strong></h1><h2 id="h_01JX2GPF68QHFA6VJ8DPBDVP7J"><strong>3.1 Endpoints</strong></h2><p><strong>FMS Service links:</strong></p><p>PROD = <a href="https://fms.tp.entsoe.eu/"><strong>https://fms.tp.entsoe.eu/</strong></a>&nbsp;</p><p>IOP = <a href="https://fms.tp-iop.entsoe.eu/"><strong>https://fms.tp-iop.entsoe.eu/</strong></a>&nbsp;</p><p><br><strong>Keycloak links:</strong></p><p>PROD = <a href="https://keycloak.tp.entsoe.eu/realms/tp/protocol/openid-connect/token"><strong>https://keycloak.tp.entsoe.eu/realms/tp/protocol/openid-connect/token</strong></a></p><p>IOP = <a href="https://keycloak.tp-iop.entsoe.eu/realms/tp/protocol/openid-connect/token"><strong>https://keycloak.tp-iop.entsoe.eu/realms/tp/protocol/openid-connect/token</strong></a></p><h2 id="h_01K1T25M234RP0K4HVS1SN1YWX">&nbsp;</h2><h2 id="h_01K1T25M23TKG94VM674QE72BA"><strong>3.2 Authorization</strong></h2><p>To download FIle Library data via API, you need to request a token using the Retrieve Token method (l<a href="https://documenter.getpostman.com/view/28274243/2sB2qgfz3W#a30d0312-69d4-4de1-be8c-e7396fae367a">ink to Postman</a>). The endpoint used to retrieve a token is <a href="https://keycloak.tp.entsoe.eu/realms/tp/protocol/openid-connect/token">https://keycloak.tp.entsoe.eu/realms/tp/protocol/openid-connect/token</a> (defined as an environment variable {{keycloakTokenURL}}), and as part of the request, you need to provide the following URL-encoded body parameters:<br><img src="/hc/article_attachments/36077699327249" width="715" height="403"></p><p>Note: If you're using the Postman collection, make sure to set the environment variables {{username}} and {{password}} with your Transparency Platform login credentials.</p><ul>
+<li>{{username}} should be your Transparency Platform account email address.</li>
+<li>{{password}} should be your Transparency Platform account password.&nbsp;<br>(Reminder: The Transparency Platform password must be updated every 183 days.)</li>
+</ul><p>The request will provide a bearer token, which is used for authorisation of the File Library APIs:</p><p><img src="/hc/article_attachments/36066695628689"></p><p>Please note that the token has an expiration, which is communicated as part of the response:<br><img style="aspect-ratio: 781/327; width: 49.79%;" class="wysiwyg-image-resized" src="/hc/article_attachments/36248614692625" width="781" height="327"></p><p>The Postman collection provided by the ENTSO-E Transparency Platform includes a post-request script that automatically saves the retrieved token as an environment variable. This helps streamline the authorization process by eliminating the need to manually set the token.</p><h2 id="h_01JXCFNFHT11PGBM2DK0WAG46G">
+<img src="/hc/article_attachments/36066724023825"><br><img src="/hc/article_attachments/35966039484817" width="435" height="164"><br>3.3 Retrieving a list of files available in the File Library</h2><p>The endpoint used to query the File Library is <a href="https://fms.tp.entsoe.eu">https://fms.tp.entsoe.eu</a>. You need to include the retrieved token as a bearer token in your request:<br><img src="/hc/article_attachments/36066695634321"></p><p>And specify the body of your request:<br><img src="/hc/article_attachments/36066695636497"></p><p>Please refer to <a href="https://documenter.getpostman.com/view/28274243/2sB2qgfz3W#b7c7695c-ab81-4100-9c3a-cde1a4cf46ac" target="_blank" rel="noopener noreferrer">the Postman documentation for "List File Metadata"</a> for more information.</p><figure style="height: 132px; width: 100%;" class="wysiwyg-table wysiwyg-table-align-left"><table style="border-spacing: 0px; border-style: solid; border-width: 1px; margin-left: 0px; margin-right: auto;"><tbody>
+<tr style="height: 44px;">
+<td style="border-style: solid; border-width: 1px; height: 44px; padding: 0px;"><strong>HTTP Status Code</strong></td>
+<td style="border-style: solid; border-width: 1px; height: 44px; padding: 0px;"><strong>Name</strong></td>
+<td style="border-style: solid; border-width: 1px; height: 44px; padding: 0px;"><strong>Message Text</strong></td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; padding: 0px;">400</td>
+<td style="border-style: solid; border-width: 1px; height: 22px; padding: 0px;">Input data parsing failed</td>
+<td style="border-style: solid; border-width: 1px; height: 22px; padding: 0px;">Invalid or missing input data.</td>
+</tr>
+<tr style="height: 44px;">
+<td style="border-style: solid; border-width: 1px; height: 44px; padding: 0px;">403</td>
+<td style="border-style: solid; border-width: 1px; height: 44px; padding: 0px;">User is not authorized to access the specified topLevelFolder</td>
+<td style="border-style: solid; border-width: 1px; height: 44px; padding: 0px;">User is not authorized to access the specified topLevelFolder.</td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; padding: 0px;">500</td>
+<td style="border-style: solid; border-width: 1px; height: 22px; padding: 0px;">File metadata retrieval failed</td>
+<td style="border-style: solid; border-width: 1px; height: 22px; padding: 0px;">Failed to retrieve file metadata.</td>
+</tr>
+</tbody></table>
+<figcaption>&nbsp;</figcaption></figure><h2 id="h_01JX2HM7HMQ1892YMYV61BD919">3.4 Retrieving folder content information in the File Library</h2><p>Please refer to <a href="https://documenter.getpostman.com/view/28274243/2sB2qgfz3W#413244c2-8007-4532-821c-b428337212be" target="_blank" rel="noopener noreferrer">the Postman documentation for "List Folder Content"</a>for detailed information.</p><figure style="width: 100%;" class="wysiwyg-table wysiwyg-table-align-left"><table style="border-spacing: 0px; border-style: solid; border-width: 1px; margin-left: 0px; margin-right: auto;"><tbody>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;"><strong>HTTP Status Code</strong></td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;"><strong>Name</strong></td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;"><strong>Message Text</strong></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">400</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Invalid input data</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Invalid or missing input data.</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">403</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Unauthorized user</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">User is not authorized to access the specified topLevelFolder.</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">500</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Folder contents retrieval failed</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Failed to retrieve folder contents or the folder does not exist.</td>
+</tr>
+</tbody></table>
+<figcaption>&nbsp;</figcaption></figure><h2 id="h_01JX2HMB67KS5KYYPDQQNYWC5R">3.5 Downloading files from the File Library</h2><p>There are 2 possibilities to download files:</p><ul>
+<li>Using the unique identifier of the files (allows downloading up to 100 files using 1 request).<br>The unique identifiers of the files can be retrieved from the responses of "<em>List File metadata</em>" or the "<em>List Folder contents</em>" APIs:&nbsp;<br><img src="/hc/article_attachments/36066724031121"><br>&nbsp;</li>
+<li>Using folder path (and optionally file name):<br><img src="/hc/article_attachments/36066724032273">
+</li>
+</ul><p>As part of the request, you can specify the export format (ZIP or original format):<br><img src="/hc/article_attachments/35966759090449" width="432" height="169"></p><p>For more information, please refer to <a href="https://documenter.getpostman.com/view/28274243/2sB2qgfz3W#1f77ffaf-8e5c-44f3-a148-9a3d95876d1e">the Postman documentation for "Download File Content"</a>.</p><figure style="width: 100%;" class="wysiwyg-table wysiwyg-table-align-left"><table style="border-spacing: 0px; border-style: solid; border-width: 1px; margin-left: 0px; margin-right: auto;"><tbody>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;"><strong>HTTP Status Code</strong></td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;"><strong>Name</strong></td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;"><strong>Message Text</strong></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">400</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Invalid input data</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Invalid or missing input data.</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">403</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Unauthorized user</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">User is not authorized to access the specified topLevelFolder.</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">400</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">File not found</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Failed to retrieve file content - the specified file does not exist.</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">500</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">File content retrieval failed</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Failed to retrieve file content.</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">400</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">The specified folder does not exist</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Failed to locate folder - the specified folder does not exist.</td>
+</tr>
+</tbody></table>
+<figcaption>&nbsp;</figcaption></figure><p>&nbsp;</p><h1 id="h_01JY11JTRHXZT9TMJEQX49TM83"><strong>4. Practical examples for automatically accessing the File Library data</strong></h1><blockquote><p>Please note that these sample codes are provided solely for your guidance. Their functionality may depend on various factors such as the operating system, library versions, and network restrictions. Therefore, you should use them at your own risk.</p></blockquote><ul>
+<li><h2 id="h_01JYKCCBJW7YVQMF0B2T8T7HN6">
+<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36528577508625"><strong>Making an API Request Using cURL</strong></a><strong> - </strong><span class="wysiwyg-font-size-large"><strong>ideal if you're looking to test the API quickly.</strong></span>
+</h2></li>
+<li><h2 id="h_01JYKD5NEANZJFN5EFEGYYPF5V"><a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36528661436049"><strong>How to download a file from the Transparency Platform File Library via a bat script (cURL version)</strong></a></h2></li>
+<li><h2 id="h_01JYKCFR1S681MNPQNSSYQG60E"><a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36523801579025"><strong>How to download a file from FMS via Python</strong></a></h2></li>
+</ul><h1 id="h_01JY6NVHA529F9P26TC3B438KT"><strong>5. Download Limits</strong></h1><p>A Maximum of 100 requests are accepted per user per minute. The number of requests is determined per user login name and distribution channel (FMS has a separate counter from e.g., Web API). Reaching of 100 query/minute limit for a given user login will result in a temporary ban of 10 minutes.&nbsp;<br>When a user reaches the limit, requests coming from the user will be responded to with HTTP Status 429 - TOO MANY REQUESTS with message text "Max allowed requests per minute (100) exceeded."</p><h1 id="h_01JX2BBQS609ACN7JQPFRYZSQA"><strong>6. File Format</strong></h1><p>The files available in the File Library are tab-delimited flat files saved with a .csv file extension and encoded in UTF-8. Data is organized into yearly, monthly, or daily files, depending on the level of granularity. Each file follows a standardized naming convention:</p><p>YYYY_MM_DD_DataItemName_DataItemNo.csv<br>Example: 2018_08_ActualTotalLoad_6.1.A.csv</p><p>Where:</p><ul>
+<li>YYYY – Year of the data</li>
+<li>MM – Month of the data (not used for yearly extracts)</li>
+<li>DD – Day of the data (not used for yearly and monthly extracts)</li>
+</ul><p>Note: An exception to this naming convention applies to the Evolution of Offered Transfer Capacities of Continuous Allocation [11.1]. In this case, data is further grouped by border.<br>Example: 2024_06_18_IT-CNORTH_IT-CSOUTH_OfferedTransferCapacitiesContinuousEvolution_11.1_r3.csv</p><p>Each data item has its own structure and column names, which are described in the "Overview of extracts" chapter. Files related to the same data item are grouped in a dedicated folder. For example, the folder ActualTotalLoad_6.1.A contains all CSV files for the data item Actual Total Load [6.1.A].</p><h1 id="h_01JX2BCKM3P2FZQ9GJDXJ79SHS"><strong>7. Extraction Process &amp; Availability</strong></h1><p>The data in the File Library is typically refreshed every 60 minutes, with the exception of the 00:00 and 01:00 CET/CEST time slots. Only files containing newly added or updated data since the previous export are regenerated. While the file's modified timestamp can help identify which files have been updated, an export log is also provided to simplify the tracking process.</p><p><img src="/hc/article_attachments/35963198057233"></p><p>An inventory of the most recent creation or update times for each file is available in the export log, located at /TP_export/Export_log_r3.csv.</p><p><img src="/hc/en-us/article_attachments/14684841728916/5b15459dedfcc755fd41f312f21bebda1503195ad3dbd8bd17d17a8b9b4ac8b0.png"></p><p>As shown in the screenshot above, the file containing Actual Total Load data for June 2021 was last generated on 02 June 2021 at 10:03.</p><h1 id="h_01JX2CSTVSQKQKWCTZJ3JPDJ30"><strong>8. FAQ</strong></h1><ul>
+<li>
+<strong>Do I need to be registered in order to access the File Library?</strong><ul><li>Yes, the File Library can be accessed only after logging in to the Transparency Platform.</li></ul>
+</li>
+<li>
+<strong>How often is the data refreshed on the File Library?</strong><ul><li>Once every hour. Please see the paragraph "<a href="#h_01JX2BCKM3P2FZQ9GJDXJ79SHS">Extraction Process &amp; Availability</a>" for details.</li></ul>
+</li>
+<li>
+<strong>What if File Library extracts have missing values for a specific period?</strong><ul><li>It is possible that there will be missing values in the extracts. Such instances should be reported to the service desk (<a href="mailto:transparency@entsoe.eu">transparency@entsoe.eu</a>). Please also provide us with further information, such as Data Item type, areas and the time-period interval for which data is missing</li></ul>
+</li>
+<li>
+<strong>Is there a limitation on data download?</strong><ul><li>Please note that there is no limitation on the download. However, please ensure fair use of the channel as it is a shared resource for all of our users.</li></ul>
+</li>
+</ul><h1 id="h_01JY6ZYRF1Z5P5NWH00CVM0NGG">9. Overview of Extracts</h1><p>Note: The overview below contains the specifications of the data items implemented in the new Transparency Platform technology. If you cannot find an extract on the Transparency Platform File Library, please refer to the <a href="https://transparency.entsoe.eu/content/static_content/Static%20content/knowledge%20base/SFTP-Transparency_Docs.html">old SFTP guide,</a> where the extract specifications of data items in the old technology are provided.</p><p>&nbsp;You can refer to the migration schedule provided on <a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/30195539966865">this page</a>.&nbsp;</p><h2 id="h_01JZ8MR8ADRFJJQ58SF1FY3KMN"><strong>Market</strong></h2><figure style="width: 100%;" class="wysiwyg-table"><table style="border-style: solid; border-width: 1px;" class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 69%;">
+<col style="width: 17%;">
+<col style="width: 14%;">
+</colgroup>
+<thead><tr>
+<th style="border-style: solid; border-width: 1px;"><strong>Extract name</strong></th>
+<th style="border-style: solid; border-width: 1px;"><strong>Time scope</strong></th>
+<th style="border-style: solid; border-width: 1px;"><strong>Format</strong></th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="border-style: solid; border-width: 1px;">AuctionRevenue_12.1.A_r3 (<a href="/hc/en-us/articles/30304460018577" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">EnergyPrices_12.1.D_r3 (<a href="/hc/en-us/articles/29036341566737" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">FlowBasedAllocationsCongestionIncome_12.1.E_r3 (<a href="/hc/en-us/articles/30289615928977" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">FlowBasedCapacityAllocation_11.1.B_r3 (<a href="/hc/en-us/articles/30303878664977" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV&nbsp;</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">PowerTransferDistributionFactors_11.1.B_r3 (<a href="/hc/en-us/articles/30304086770193" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">FlowBasedCapacityAllocationArchives_11.1.B_r3</td>
+<td style="border-style: solid; border-width: 1px;">Monthly (legacy publications)</td>
+<td style="border-style: solid; border-width: 1px;">ZIP (XML)</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">ImplicitAllocationsCongestionIncome_12.1.E_r3 (<a href="/hc/en-us/articles/30300140812817" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">ImplicitAllocationsNetPositions_12.1.E_r3 (<a href="/hc/en-us/articles/20194954111892" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">OfferedTransferCapacitiesContinuous_11.1_r3 (<a href="/hc/en-us/articles/25275003514385" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">OfferedTransferCapacitiesContinuousEvolution_11.1_r3 (<a href="/hc/en-us/articles/27817457609873" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Daily</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">OfferedTransferCapacitiesExplicit_11.1_r3 (<a href="/hc/en-us/articles/27817969799185" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">OfferedTransferCapacitiesImplicit_11.1_r3 (<a href="/hc/en-us/articles/27818118639505" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">TotalCapacityAlreadyAllocated_12.1.C_r3 (<a href="/hc/en-us/articles/30304224236945" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">TotalCapacityNominated_12.1.B_r3 (<a href="/hc/en-us/articles/30300302179089" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">TransferCapacitiesAllocatedWithThirdCountries_12.1.H_r3 (<a href="/hc/en-us/articles/30300484255889" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">UseOfTransferCapacity_12.1.A_r3 (<a href="/hc/en-us/articles/30304679133713" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+</tbody>
+</table></figure><h2 id="h_01JX268Z6Q6YKPJBVPVBZT27YA"><strong>Load</strong></h2><figure class="wysiwyg-table"><table style="margin-left: 0px; margin-right: auto;">
+<thead><tr>
+<th style="border-style: solid; border-width: 1px;"><strong>Extract name</strong></th>
+<th style="border-style: solid; border-width: 1px;"><strong>Time scope</strong></th>
+<th style="border-style: solid; border-width: 1px;"><strong>Format</strong></th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="border-style: solid; border-width: 1px;">ActualTotalLoad_6.1.A_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36492490842513" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">DayAheadTotalLoadForecast_6.1.B_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36492900251281" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">TotalLoadForecast_6.1.C_D_E_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36493090085393" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">YearAheadForecastMargin_8.1_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36493228951441" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">All</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+</tbody>
+</table></figure><h2 id="h_01JX268Z6QT8FF4BZJGCJP5R1K"><strong>Generation</strong></h2><figure style="width: 100%;" class="wysiwyg-table"><table style="border-style: solid; border-width: 1px;" class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 75%;">
+<col style="width: 13%;">
+<col style="width: 12%;">
+</colgroup>
+<thead><tr>
+<th style="border-style: solid; border-width: 1px;"><strong>Extract name</strong></th>
+<th style="border-style: solid; border-width: 1px;"><strong>Time scope</strong></th>
+<th style="border-style: solid; border-width: 1px;"><strong>Format</strong></th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="border-style: solid; border-width: 1px;">ActualGenerationOutputPerGenerationUnit_16.1.A_r2.1 (<a href="/hc/en-us/articles/25431079375761" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">ActualGenerationOutputPerGenerationUnit_16.1.A_r3 (<a href="/hc/en-us/articles/39309514389777" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">AggregatedFillingRateOfWaterReservoirsAndHydroStoragePlants_16.1.D_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36495128785937" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Yearly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">AggregatedGenerationPerType_16.1.B_C_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36493702227729" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">DayAheadAggregatedGeneration_14.1.C_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36495228971153" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td>GenerationForecastsForWindAndSolar_14.1.D_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36495298181649" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td>InstalledGenerationCapacityAggregated_14.1.A_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36495394921489" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">All</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">InstalledGenerationCapacityPerProductionUnit_14.1.B_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36496107495953" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Yearly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">ProductionAndGenerationUnits_r2 (<a href="/hc/en-us/articles/25430753481489" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">All</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">ProductionAndGenerationUnits_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36496214610449" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">All</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+</tbody>
+</table></figure><h2 id="h_01JX268Z6Q3Y2GVS61GNZRTB0V"><strong>Transmission</strong></h2><figure style="width: 100%;" class="wysiwyg-table"><table style="border-style: solid; border-width: 1px;" class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 76%;">
+<col style="width: 15%;">
+<col style="width: 9%;">
+</colgroup>
+<thead><tr>
+<th style="border-style: solid; border-width: 1px;"><strong>Extract name</strong></th>
+<th style="border-style: solid; border-width: 1px;"><strong>Time scope</strong></th>
+<th style="border-style: solid; border-width: 1px;"><strong>Format</strong></th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="border-style: solid; border-width: 1px;">CommercialSchedules_12.1.F_r3 (<a href="/hc/en-us/articles/27818148224401" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">CommercialSchedulesNetPositions_12.1.F_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36104673562769" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">CostsOfCongestionManagement_13.1.C_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36501048028689" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Yearly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">Countertrading_13.1.B_r2.1 (<a href="/hc/en-us/articles/29887121046801" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">Countertrading_13.1.B_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36501218679953" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td>CrossBorderCapacityForDcLinksIntradayTransferLimits_11.3_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36501378357393" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">ExpansionAndDismantlingProjects_9.1_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36502096877713" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Yearly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">ForecastedTransferCapacities_11.1_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36502217144977" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">PhysicalFlows_12.1.G_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36502366049297" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">RedispatchingCrossBorder_13.1.A_r2.1 (<a href="/hc/en-us/articles/29887908387729" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">RedispatchingCrossBorder_13.1.A_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36502430140305" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">RedispatchingInternal_13.1.A_r2.1 (<a href="/hc/en-us/articles/29888252304529" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">RedispatchingInternal_13.1.A_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36502587038609" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+</tbody>
+</table></figure><h2 id="h_01JX268Z6QEZVYK433ZVB6QDCW"><strong>Outages</strong></h2><figure class="wysiwyg-table"><table style="border-style: solid; border-width: 1px;">
+<thead><tr>
+<th style="border-style: solid; border-width: 1px;"><strong>Extract name</strong></th>
+<th style="border-style: solid; border-width: 1px;"><strong>Time scope</strong></th>
+<th style="border-style: solid; border-width: 1px;"><strong>Format</strong></th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="border-style: solid; border-width: 1px;">Fallbacks_IF_IN7.2_mFRR3.11_aFRR3.10_r3 (<a href="/hc/en-us/articles/32491680631057" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">UnavailabilityInTheTransmissionGrid_10.1.A_B_r3 (<a href="/hc/en-us/articles/32491791295377" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">UnavailabilityOfConsumptionUnits_7.1.A_B_r3 (<a href="/hc/en-us/articles/32491849126289" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">UnavailabilityOfOffshoreGrid_10.1.C_r3 (<a href="/hc/en-us/articles/32491951727889" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">UnavailabilityOfProductionAndGenerationUnits_15.1.A_B_C_D_r3 (<a href="/hc/en-us/articles/32492060810513" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+</tbody>
+</table></figure><h2 id="h_01JX268Z6R6SXRQRZF7RR3GSNW"><strong>Balancing</strong></h2><figure style="width: 100%;" class="wysiwyg-table"><table style="border-style: solid; border-width: 1px;" class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 74%;">
+<col style="width: 14%;">
+<col style="width: 12%;">
+</colgroup>
+<thead><tr>
+<th style="border-style: solid; border-width: 1px;"><strong>Extract name</strong></th>
+<th style="border-style: solid; border-width: 1px;"><strong>Time scope</strong></th>
+<th style="border-style: solid; border-width: 1px;"><strong>Format</strong></th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="border-style: solid; border-width: 1px;">ActualCapacitiesAndOutlookOnFrequencyRestorationReserveAndReplacementReserve_SOGL_188.3_188.4_189.2_189.3_r3 (<a href="/hc/en-us/articles/22548667834772" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Yearly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">AggregatedBalancingEnergyBids_12.3.E_r3 (<a href="/hc/en-us/articles/24433096274193" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">AmountAndPricesPaidOfBalancingReservesUnderContract_17.1.B_C_r2 (<a href="/hc/en-us/articles/19031935947796" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">AmountAndPricesPaidOfBalancingReservesUnderContract_17.1.B_C_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36504079705105" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">BalancingBorderCapacityLimitations_IFs_4.3_4.4_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36504432570897" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">BalancingEnergyBids_12.3.B_C_r3 (<a href="/hc/en-us/articles/14812641529236" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Daily (for the past 93 days)</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">BalancingEnergyBidsArchives_12.3.B_C_r3</td>
+<td style="border-style: solid; border-width: 1px;">Daily (data older than 93 days)</td>
+<td style="border-style: solid; border-width: 1px;">ZIP (XML)</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">ChangesToBidAvailability_IFs_mFRR9.9_aFRR9.6_9.8_r3 (<a href="/hc/en-us/articles/19919782207764">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">ChangesToBidAvailabilityArchives_IFs_mFRR9.9_aFRR9.6_9.8_r3</td>
+<td style="border-style: solid; border-width: 1px;">Daily (data older than 93 days)</td>
+<td style="border-style: solid; border-width: 1px;">ZIP (XML)</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">CrossBorderMarginalPriceForAfrrCs_IF_aFRR3.16_r3 (<a href="/hc/en-us/articles/19920171458068">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Daily</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">CrossZonalBalancingCapacity_12.3.H_12.3.I_r3 (<a href="/hc/en-us/articles/32492668179985" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">CurrentBalancingState_12.3.A_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36504731839889" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">ElasticDemands_IF_mFRR3.4_r3 (<a href="/hc/en-us/articles/19920518145044" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">ExchangedReserveCapacity_SOGL_190.3_r3 (<a href="/hc/en-us/articles/22549325765908" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Yearly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">FinancialExpensesAndIncomeForBalancing_17.1.I_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36504231928977" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">FrequencyContainmentReserveAmountAndShares_SOGL_187.2_r3 (<a href="/hc/en-us/articles/22546876772884">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Yearly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">ImbalancePrices_17.1.G_r2.1 (<a href="/hc/en-us/articles/23761390422292" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">ImbalancePrices_17.1.G_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36504572092433" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">NettedAndExchangedVolumes_IFs_IN3.10_mFRR3.17_r3 (<a href="/hc/en-us/articles/15412797175572" target="_self">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">NettedAndExchangedVolumesAfrr_IFs_aFRR3.16_r3 (<a href="/hc/en-us/articles/18796185732500">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Daily</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">NettedAndExchangedVolumesPerBorder_IFs_IN3.10_mFRR3.17_r3 (<a href="/hc/en-us/articles/25430416956817" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">NettedAndExchangedVolumesPerBorderAfrr_IFs_aFRR3.16_r3 (<a href="/hc/en-us/articles/25430505615761" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Daily</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td>PermanentAllocationLimitations_IFs_4.5_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36504333815057" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">PricesOfActivatedBalancingEnergy_17.1.F_r3 (<a href="/hc/en-us/articles/14686519011860" target="_self">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">ProcuredBalancingCapacity_12.3.F_r3 (<a href="/hc/en-us/articles/32492445034385" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">SharingOfReplacementReserveAndFrequencyRestorationReserve_SOGL_190.1_r3 (<a href="/hc/en-us/articles/22548774093332" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Yearly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">Sharing?fFrequencyContainmentReserveBetweenSynchronousAreas_SOGL_190.2_r3 (<a href="/hc/en-us/articles/22549178004116" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Yearly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">TotalImbalanceVolumes_17.1.H_r3 (<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36504619611793" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Monthly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+</tbody>
+</table></figure><h2 id="h_01JX268Z6RYSC5MPMCZ2JMK020"><strong>Operations</strong></h2><figure style="width: 96.3%;" class="wysiwyg-table"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 75%;">
+<col style="width: 14%;">
+<col style="width: 11%;">
+</colgroup>
+<thead><tr>
+<th style="border-style: solid; border-width: 1px;"><strong>Extract name</strong></th>
+<th style="border-style: solid; border-width: 1px;"><strong>Time scope</strong></th>
+<th style="border-style: solid; border-width: 1px;"><strong>Format</strong></th>
+</tr></thead>
+<tbody><tr>
+<td style="border-style: solid; border-width: 1px;">ResultsOfTheCriteriaApplicationProcess_SOGL_185.4_r3 (<a href="/hc/en-us/articles/22549388531860" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Yearly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr></tbody>
+</table></figure><h2 id="h_01JX268Z6RWVEEVKN3FVK3B631"><strong>Other Market Information</strong></h2><figure style="width: 100%;" class="wysiwyg-table"><table style="border-style: solid; border-width: 1px;" class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 67%;">
+<col style="width: 14%;">
+<col style="width: 19%;">
+</colgroup>
+<tbody>
+<tr>
+<td style="border-style: solid; border-width: 1px;"><strong>Extract name</strong></td>
+<td style="border-style: solid; border-width: 1px;"><strong>Time scope</strong></td>
+<td style="border-style: solid; border-width: 1px;"><strong>Format</strong></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">OtherMarketInformation_r3 (<a href="/hc/en-us/articles/23984419108756" target="_blank" rel="noopener noreferrer">see details</a>)</td>
+<td style="border-style: solid; border-width: 1px;">Yearly</td>
+<td style="border-style: solid; border-width: 1px;">CSV</td>
+</tr>
+</tbody>
+</table></figure></div>
+
+          
+            <section class="content-tags">
+              <p>Related to</p>
+              <ul class="content-tag-list">
+                
+                  <li class="content-tag-item" data-content-tag-id="01JX2HW1KDFAZMTH8EH10E8RQM">
+                    <a title="Search results" href="/hc/en-us/search?content_tags=01JX2HW1KDFAZMTH8EH10E8RQM&amp;utf8=%E2%9C%93">
+                      File Library
+                    </a>
+                  </li>
+                
+              </ul>
+            </section>
+          
+
+          
+        </div>
+      </section>
+
+      <footer>
+        <div class="article-footer">
+          
+          
+            
+          
+        </div>
+        
+          <div class="article-votes">
+            <h2 class="article-votes-question" id="article-votes-label">Was this article helpful?</h2>
+            <div class="article-votes-controls" role="group" aria-labelledby="article-votes-label">
+              <button type="button" class="button article-vote article-vote-up" data-helper="vote" data-item="article" data-type="up" data-id="35960137882129" data-upvote-count="8" data-vote-count="8" data-vote-sum="8" data-vote-url="/hc/en-us/articles/35960137882129/vote" data-value="null" data-label="8 out of 8 found this helpful" data-selected-class="button-primary" aria-label="This article was helpful" aria-pressed="false">Yes</button>
+              <button type="button" class="button article-vote article-vote-down" data-helper="vote" data-item="article" data-type="down" data-id="35960137882129" data-upvote-count="8" data-vote-count="8" data-vote-sum="8" data-vote-url="/hc/en-us/articles/35960137882129/vote" data-value="null" data-label="8 out of 8 found this helpful" data-selected-class="button-primary" aria-label="This article was not helpful" aria-pressed="false">No</button>
+            </div>
+            <small class="article-votes-count">
+              <span class="article-vote-label" data-helper="vote" data-item="article" data-type="label" data-id="35960137882129" data-upvote-count="8" data-vote-count="8" data-vote-sum="8" data-vote-url="/hc/en-us/articles/35960137882129/vote" data-value="null" data-label="8 out of 8 found this helpful">8 out of 8 found this helpful</span>
+            </small>
+          </div>
+        
+
+        <div class="article-more-questions">
+          Have more questions? <a href="/hc/en-us/requests/new">Submit a request</a>
+        </div>
+        <div class="article-return-to-top">
+          <a href="#article-container">
+            Return to top
+            <svg xmlns="http://www.w3.org/2000/svg" class="article-return-to-top-icon" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
+            </svg>
+          </a>
+        </div>
+      </footer>
+
+      <div class="article-relatives">
+        
+          <div data-recent-articles></div>
+        
+        
+          
+  <section class="related-articles">
+    
+      <h2 class="related-articles-title">Related articles</h2>
+    
+    <ul>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBEOONw3IToYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBGaPp%2B0IDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJPL2hjL2VuLXVzL2FydGljbGVzLzM2NTIzODAxNTc5MDI1LUhvdy10by1kb3dubG9hZC1maWxlLWZyb20tRk1TLXZpYS1QeXRob24GOwhUOglyYW5raQY%3D--805ae8a749e9253c7d7d5276e82648b422512722" rel="nofollow">How to download file from FMS via Python</a>
+        </li>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBQeEMdFDjoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBGaPp%2B0IDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJKL2hjL2VuLXVzL2FydGljbGVzLzE1NjkyODU1MjU0NTQ4LVNpdGVtYXAtZm9yLVJlc3RmdWwtQVBJLUludGVncmF0aW9uBjsIVDoJcmFua2kH--a6c4f4721677ae23e62d882c84e1fa9e5426abd2" rel="nofollow">Sitemap for Restful API Integration</a>
+        </li>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBH14vg4IToYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBGaPp%2B0IDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJHL2hjL2VuLXVzL2FydGljbGVzLzM2NTI4NTc3NTA4NjI1LU1ha2luZy1hbi1BUEktUmVxdWVzdC1Vc2luZy1jVVJMBjsIVDoJcmFua2kI--2d301bcebb5c15ebff03d3767b6a10011667be4e" rel="nofollow">Making an API Request Using cURL</a>
+        </li>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJH7bnJ2GzoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBGaPp%2B0IDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJqL2hjL2VuLXVzL2FydGljbGVzLzMwMTk1NTM5OTY2ODY1LU1pZ3JhdGlvbi1vZi1UcmFuc3BhcmVuY3ktUGxhdGZvcm0tZGF0YS1pdGVtcy10by1hLW5ld2VyLXRlY2hub2xvZ3kGOwhUOglyYW5raQk%3D--805d3d0d6eb97291af07a67fcb58ed91d8bdd64d" rel="nofollow">Migration of Transparency Platform data items to a newer technology</a>
+        </li>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBGKOO%2B2IDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBGaPp%2B0IDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJQL2hjL2VuLXVzL2FydGljbGVzLzM1OTcwMDY5NTk2Njg5LUhvdy10by1kb3dubG9hZC1maWxlLWZyb20tU0ZUUC12aWEtUHl0aG9uBjsIVDoJcmFua2kK--59c45e675c687591fb97f4c28d8207c1605773a2" rel="nofollow">How to download file from SFTP via Python</a>
+        </li>
+      
+    </ul>
+  </section>
+
+
+        
+      </div>
+      
+        <div class="article-comments" id="article-comments">
+          <section class="comments">
+            <header class="comment-overview">
+              <h2 class="comment-heading">
+                Comments
+              </h2>
+              <p class="comment-callout">0 comments</p>
+              
+            </header>
+
+            <ul id="comments" class="comment-list">
+              
+            </ul>
+
+            
+
+            
+
+            <p class="comment-callout">Article is closed for comments.</p>
+          </section>
+        </div>
+      
+    </article>
+  </div>
+</div>
+
+  </main>
+
+  <footer class="footer">
+  <div class="footer-inner">
+    <a title="Home" href="/hc/en-us">Transparency Platform</a>
+
+    <div class="footer-language-selector">
+      
+    </div>
+  </div>
+</footer>
+
+
+    <div class="powered-by-zendesk">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" focusable="false" viewBox="0 0 26 26">
+    <path d="M12 8.2v14.5H0zM12 3c0 3.3-2.7 6-6 6S0 6.3 0 3h12zm2 19.7c0-3.3 2.7-6 6-6s6 2.7 6 6H14zm0-5.2V3h12z"/>
+  </svg>
+
+  <a href="https://www.zendesk.com/service/help-center/?utm_source=helpcenter&utm_medium=poweredbyzendesk&utm_campaign=text&utm_content=SERVICE+DESK" target="_blank" rel="nofollow">Powered by Zendesk</a>
+</div>
+
+
+  <!-- / -->
+
+  
+  <script src="//static.zdassets.com/hc/assets/en-us.41d9221054ff82179c13.js"></script>
+  <script src="https://entsoe.zendesk.com/auth/v2/host/without_iframe.js" data-brand-id="10000260229652" data-return-to="https://transparencyplatform.zendesk.com/hc/en-us/articles/35960137882129-File-Library-Guide" data-theme="hc" data-locale="en-us" data-auth-origin="10000260229652,false,true"></script>
+
+  <script type="text/javascript">
+  /*
+
+    Greetings sourcecode lurker!
+
+    This is for internal Zendesk and legacy usage,
+    we don't support or guarantee any of these values
+    so please don't build stuff on top of them.
+
+  */
+
+  HelpCenter = {};
+  HelpCenter.account = {"subdomain":"entsoe","environment":"production","name":"SERVICE DESK"};
+  HelpCenter.user = {"identifier":"da39a3ee5e6b4b0d3255bfef95601890afd80709","email":null,"name":"","role":"anonymous","avatar_url":"https://assets.zendesk.com/hc/assets/default_avatar.png","is_admin":false,"organizations":[],"groups":[]};
+  HelpCenter.internal = {"asset_url":"//static.zdassets.com/hc/assets/","web_widget_asset_composer_url":"https://static.zdassets.com/ekr/snippet.js","current_session":{"locale":"en-us","csrf_token":null,"shared_csrf_token":null},"usage_tracking":{"event":"article_viewed","data":"BAh7CDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoPYXJ0aWNsZV9pZGwrCBGaPp+0IDoKX21ldGF7DDoPYWNjb3VudF9pZGkCvY86E2hlbHBfY2VudGVyX2lkbCsIFIJTXxgJOg1icmFuZF9pZGwrCBRq9V0YCToMdXNlcl9pZDA6E3VzZXJfcm9sZV9uYW1lSSIOQU5PTllNT1VTBjsGVDsASSIKZW4tdXMGOwZUOhphbm9ueW1vdXNfdHJhY2tpbmdfaWQw--6b3ef31d95b1ea30175e35421d3035e64e0a4696","url":"https://transparencyplatform.zendesk.com/hc/activity"},"current_record_id":"35960137882129","current_record_url":"/hc/en-us/articles/35960137882129-File-Library-Guide","current_record_title":"File Library Guide","current_text_direction":"ltr","current_brand_id":10000260229652,"current_brand_name":"Transparency Platform Helpdesk.","current_brand_url":"https://transparencyplatform.zendesk.com","current_brand_active":true,"current_path":"/hc/en-us/articles/35960137882129-File-Library-Guide","show_autocomplete_breadcrumbs":true,"user_info_changing_enabled":false,"has_user_profiles_enabled":true,"has_end_user_attachments":true,"user_aliases_enabled":false,"has_anonymous_kb_voting":true,"has_multi_language_help_center":true,"show_at_mentions":true,"embeddables_config":{"embeddables_web_widget":false,"embeddables_help_center_auth_enabled":false,"embeddables_connect_ipms":false},"answer_bot_subdomain":"static","general_settings_url":"https://transparencyplatform.zendesk.com/hc/admin/general_settings?locale=en-us","user_segments_url":"https://entsoe.zendesk.com/knowledge/user_segments?brand_id=10000260229652","has_gather":true,"has_ckeditor":true,"has_community_enabled":false,"has_community_badges":true,"has_community_post_content_tagging":false,"has_gather_content_tags":true,"has_guide_content_tags":true,"has_user_segments":true,"has_answer_bot_web_form_enabled":false,"has_garden_modals":false,"theming_cookie_key":"hc-da39a3ee5e6b4b0d3255bfef95601890afd80709-2-preview","is_preview":false,"has_alternate_templates":true,"arrange_articles_url":"https://entsoe.zendesk.com/knowledge/arrange?brand_id=10000260229652","article_verification_url":"https://entsoe.zendesk.com/knowledge/verification?brand_id=10000260229652","has_article_verification":true,"guide_language_settings_url":"https://transparencyplatform.zendesk.com/hc/admin/language_settings?locale=en-us","docs_importer_url":"https://entsoe.zendesk.com/knowledge/import_articles?brand_id=10000260229652","content_tags_url":"https://entsoe.zendesk.com/knowledge/content_tags?brand_id=10000260229652","community_badges_url":"https://entsoe.zendesk.com/knowledge/community_badges?brand_id=10000260229652","community_settings_url":"https://entsoe.zendesk.com/knowledge/community_settings?brand_id=10000260229652","gather_plan_state":"subscribed","search_settings_url":"https://entsoe.zendesk.com/knowledge/search_settings?brand_id=10000260229652","has_search_settings_in_plan":true,"theming_api_version":4,"theming_settings":{"brand_color":"#17494D","brand_text_color":"#FFFFFF","text_color":"#2F3941","link_color":"#1F73B7","hover_link_color":"#0F3554","visited_link_color":"#9358B0","background_color":"#FFFFFF","heading_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif","text_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif","logo":"/hc/theming_assets/01HZPZ1KARCS74JZ8217B3F3VD","show_brand_name":true,"favicon":"/hc/theming_assets/01HZPZ1KEM1BX1ATHNG5X7EAEK","homepage_background_image":"/hc/theming_assets/01HZPZ1MKYY6YJH9EFQ7330EF2","community_background_image":"/hc/theming_assets/01HZPZ1NKWKGBHGR2YB1VVMTN4","community_image":"/hc/theming_assets/01HZPZ1PPPFJBWSZAMBGQQ5CYP","instant_search":true,"scoped_kb_search":true,"scoped_community_search":true,"show_recent_activity":true,"show_articles_in_section":true,"show_article_author":false,"show_article_comments":true,"show_follow_article":true,"show_recently_viewed_articles":true,"show_related_articles":true,"show_article_sharing":false,"show_follow_section":true,"show_follow_post":false,"show_post_sharing":false,"show_follow_topic":false,"request_list_beta":false},"has_pci_credit_card_custom_field":true,"help_center_restricted":false,"is_assuming_someone_else":false,"flash_messages":[],"user_photo_editing_enabled":true,"user_preferred_locale":"en-us","base_locale":"en-us","login_url":"https://entsoe.zendesk.com/access?brand_id=10000260229652\u0026locale=en-us\u0026return_to=%2Fhc%2F","has_custom_statuses_enabled":false,"has_hc_generative_answers_setting_enabled":true,"has_generative_search_with_zgpt_enabled":false,"has_guide_service_catalog":true,"has_service_catalog_search_poc":false,"has_remove_breadcrumbs":true,"has_csat_reverse_2_scale_in_mobile":false,"has_knowledge_navigation":false,"version":"v26492"};
+</script>
+
+  
+  <script src="//static.zdassets.com/hc/assets/hc_enduser-49830afbf3d5f34f9b9a41d79c36feda.js"></script>
+  <script type="text/javascript" src="/hc/theming_assets/36797/10000260229652/script.js?digest=38209385873169"></script>
+  
+</body>
+</html>

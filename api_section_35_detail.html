@@ -1,0 +1,71 @@
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;"><strong>HTTP Status Code</strong></td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;"><strong>Name</strong></td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;"><strong>Message Text</strong></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">400</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Invalid input data</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Invalid or missing input data.</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">403</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Unauthorized user</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">User is not authorized to access the specified topLevelFolder.</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">500</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Folder contents retrieval failed</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Failed to retrieve folder contents or the folder does not exist.</td>
+</tr>
+</tbody></table>
+<figcaption>&nbsp;</figcaption></figure><h2 id="h_01JX2HMB67KS5KYYPDQQNYWC5R">3.5 Downloading files from the File Library</h2><p>There are 2 possibilities to download files:</p><ul>
+<li>Using the unique identifier of the files (allows downloading up to 100 files using 1 request).<br>The unique identifiers of the files can be retrieved from the responses of "<em>List File metadata</em>" or the "<em>List Folder contents</em>" APIs:&nbsp;<br><img src="/hc/article_attachments/36066724031121"><br>&nbsp;</li>
+<li>Using folder path (and optionally file name):<br><img src="/hc/article_attachments/36066724032273">
+</li>
+</ul><p>As part of the request, you can specify the export format (ZIP or original format):<br><img src="/hc/article_attachments/35966759090449" width="432" height="169"></p><p>For more information, please refer to <a href="https://documenter.getpostman.com/view/28274243/2sB2qgfz3W#1f77ffaf-8e5c-44f3-a148-9a3d95876d1e">the Postman documentation for "Download File Content"</a>.</p><figure style="width: 100%;" class="wysiwyg-table wysiwyg-table-align-left"><table style="border-spacing: 0px; border-style: solid; border-width: 1px; margin-left: 0px; margin-right: auto;"><tbody>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;"><strong>HTTP Status Code</strong></td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;"><strong>Name</strong></td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;"><strong>Message Text</strong></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">400</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Invalid input data</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Invalid or missing input data.</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">403</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Unauthorized user</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">User is not authorized to access the specified topLevelFolder.</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">400</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">File not found</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Failed to retrieve file content - the specified file does not exist.</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">500</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">File content retrieval failed</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Failed to retrieve file content.</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">400</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">The specified folder does not exist</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Failed to locate folder - the specified folder does not exist.</td>
+</tr>
+</tbody></table>
+<figcaption>&nbsp;</figcaption></figure><p>&nbsp;</p><h1 id="h_01JY11JTRHXZT9TMJEQX49TM83"><strong>4. Practical examples for automatically accessing the File Library data</strong></h1><blockquote><p>Please note that these sample codes are provided solely for your guidance. Their functionality may depend on various factors such as the operating system, library versions, and network restrictions. Therefore, you should use them at your own risk.</p></blockquote><ul>
+<li><h2 id="h_01JYKCCBJW7YVQMF0B2T8T7HN6">
+<a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36528577508625"><strong>Making an API Request Using cURL</strong></a><strong> - </strong><span class="wysiwyg-font-size-large"><strong>ideal if you're looking to test the API quickly.</strong></span>
+</h2></li>
+<li><h2 id="h_01JYKD5NEANZJFN5EFEGYYPF5V"><a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36528661436049"><strong>How to download a file from the Transparency Platform File Library via a bat script (cURL version)</strong></a></h2></li>
+<li><h2 id="h_01JYKCFR1S681MNPQNSSYQG60E"><a href="https://transparencyplatform.zendesk.com/hc/en-us/articles/36523801579025"><strong>How to download a file from FMS via Python</strong></a></h2></li>
+</ul><h1 id="h_01JY6NVHA529F9P26TC3B438KT"><strong>5. Download Limits</strong></h1><p>A Maximum of 100 requests are accepted per user per minute. The number of requests is determined per user login name and distribution channel (FMS has a separate counter from e.g., Web API). Reaching of 100 query/minute limit for a given user login will result in a temporary ban of 10 minutes.&nbsp;<br>When a user reaches the limit, requests coming from the user will be responded to with HTTP Status 429 - TOO MANY REQUESTS with message text "Max allowed requests per minute (100) exceeded."</p><h1 id="h_01JX2BBQS609ACN7JQPFRYZSQA"><strong>6. File Format</strong></h1><p>The files available in the File Library are tab-delimited flat files saved with a .csv file extension and encoded in UTF-8. Data is organized into yearly, monthly, or daily files, depending on the level of granularity. Each file follows a standardized naming convention:</p><p>YYYY_MM_DD_DataItemName_DataItemNo.csv<br>Example: 2018_08_ActualTotalLoad_6.1.A.csv</p><p>Where:</p><ul>
+<li>YYYY – Year of the data</li>
+<li>MM – Month of the data (not used for yearly extracts)</li>
+<li>DD – Day of the data (not used for yearly and monthly extracts)</li>
+</ul><p>Note: An exception to this naming convention applies to the Evolution of Offered Transfer Capacities of Continuous Allocation [11.1]. In this case, data is further grouped by border.<br>Example: 2024_06_18_IT-CNORTH_IT-CSOUTH_OfferedTransferCapacitiesContinuousEvolution_11.1_r3.csv</p><p>Each data item has its own structure and column names, which are described in the "Overview of extracts" chapter. Files related to the same data item are grouped in a dedicated folder. For example, the folder ActualTotalLoad_6.1.A contains all CSV files for the data item Actual Total Load [6.1.A].</p><h1 id="h_01JX2BCKM3P2FZQ9GJDXJ79SHS"><strong>7. Extraction Process &amp; Availability</strong></h1><p>The data in the File Library is typically refreshed every 60 minutes, with the exception of the 00:00 and 01:00 CET/CEST time slots. Only files containing newly added or updated data since the previous export are regenerated. While the file's modified timestamp can help identify which files have been updated, an export log is also provided to simplify the tracking process.</p><p><img src="/hc/article_attachments/35963198057233"></p><p>An inventory of the most recent creation or update times for each file is available in the export log, located at /TP_export/Export_log_r3.csv.</p><p><img src="/hc/en-us/article_attachments/14684841728916/5b15459dedfcc755fd41f312f21bebda1503195ad3dbd8bd17d17a8b9b4ac8b0.png"></p><p>As shown in the screenshot above, the file containing Actual Total Load data for June 2021 was last generated on 02 June 2021 at 10:03.</p><h1 id="h_01JX2CSTVSQKQKWCTZJ3JPDJ30"><strong>8. FAQ</strong></h1><ul>
+<li>
+<strong>Do I need to be registered in order to access the File Library?</strong><ul><li>Yes, the File Library can be accessed only after logging in to the Transparency Platform.</li></ul>
+</li>

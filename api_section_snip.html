@@ -1,0 +1,41 @@
+</ol><h1 id="h_01JX28JE0A38SKND6KX3N7SDRM"><strong>3. Downloading File Library Extracts using API</strong></h1><h2 id="h_01JX2GPF68QHFA6VJ8DPBDVP7J"><strong>3.1 Endpoints</strong></h2><p><strong>FMS Service links:</strong></p><p>PROD = <a href="https://fms.tp.entsoe.eu/"><strong>https://fms.tp.entsoe.eu/</strong></a>&nbsp;</p><p>IOP = <a href="https://fms.tp-iop.entsoe.eu/"><strong>https://fms.tp-iop.entsoe.eu/</strong></a>&nbsp;</p><p><br><strong>Keycloak links:</strong></p><p>PROD = <a href="https://keycloak.tp.entsoe.eu/realms/tp/protocol/openid-connect/token"><strong>https://keycloak.tp.entsoe.eu/realms/tp/protocol/openid-connect/token</strong></a></p><p>IOP = <a href="https://keycloak.tp-iop.entsoe.eu/realms/tp/protocol/openid-connect/token"><strong>https://keycloak.tp-iop.entsoe.eu/realms/tp/protocol/openid-connect/token</strong></a></p><h2 id="h_01K1T25M234RP0K4HVS1SN1YWX">&nbsp;</h2><h2 id="h_01K1T25M23TKG94VM674QE72BA"><strong>3.2 Authorization</strong></h2><p>To download FIle Library data via API, you need to request a token using the Retrieve Token method (l<a href="https://documenter.getpostman.com/view/28274243/2sB2qgfz3W#a30d0312-69d4-4de1-be8c-e7396fae367a">ink to Postman</a>). The endpoint used to retrieve a token is <a href="https://keycloak.tp.entsoe.eu/realms/tp/protocol/openid-connect/token">https://keycloak.tp.entsoe.eu/realms/tp/protocol/openid-connect/token</a> (defined as an environment variable {{keycloakTokenURL}}), and as part of the request, you need to provide the following URL-encoded body parameters:<br><img src="/hc/article_attachments/36077699327249" width="715" height="403"></p><p>Note: If you're using the Postman collection, make sure to set the environment variables {{username}} and {{password}} with your Transparency Platform login credentials.</p><ul>
+<li>{{username}} should be your Transparency Platform account email address.</li>
+<li>{{password}} should be your Transparency Platform account password.&nbsp;<br>(Reminder: The Transparency Platform password must be updated every 183 days.)</li>
+</ul><p>The request will provide a bearer token, which is used for authorisation of the File Library APIs:</p><p><img src="/hc/article_attachments/36066695628689"></p><p>Please note that the token has an expiration, which is communicated as part of the response:<br><img style="aspect-ratio: 781/327; width: 49.79%;" class="wysiwyg-image-resized" src="/hc/article_attachments/36248614692625" width="781" height="327"></p><p>The Postman collection provided by the ENTSO-E Transparency Platform includes a post-request script that automatically saves the retrieved token as an environment variable. This helps streamline the authorization process by eliminating the need to manually set the token.</p><h2 id="h_01JXCFNFHT11PGBM2DK0WAG46G">
+<img src="/hc/article_attachments/36066724023825"><br><img src="/hc/article_attachments/35966039484817" width="435" height="164"><br>3.3 Retrieving a list of files available in the File Library</h2><p>The endpoint used to query the File Library is <a href="https://fms.tp.entsoe.eu">https://fms.tp.entsoe.eu</a>. You need to include the retrieved token as a bearer token in your request:<br><img src="/hc/article_attachments/36066695634321"></p><p>And specify the body of your request:<br><img src="/hc/article_attachments/36066695636497"></p><p>Please refer to <a href="https://documenter.getpostman.com/view/28274243/2sB2qgfz3W#b7c7695c-ab81-4100-9c3a-cde1a4cf46ac" target="_blank" rel="noopener noreferrer">the Postman documentation for "List File Metadata"</a> for more information.</p><figure style="height: 132px; width: 100%;" class="wysiwyg-table wysiwyg-table-align-left"><table style="border-spacing: 0px; border-style: solid; border-width: 1px; margin-left: 0px; margin-right: auto;"><tbody>
+<tr style="height: 44px;">
+<td style="border-style: solid; border-width: 1px; height: 44px; padding: 0px;"><strong>HTTP Status Code</strong></td>
+<td style="border-style: solid; border-width: 1px; height: 44px; padding: 0px;"><strong>Name</strong></td>
+<td style="border-style: solid; border-width: 1px; height: 44px; padding: 0px;"><strong>Message Text</strong></td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; padding: 0px;">400</td>
+<td style="border-style: solid; border-width: 1px; height: 22px; padding: 0px;">Input data parsing failed</td>
+<td style="border-style: solid; border-width: 1px; height: 22px; padding: 0px;">Invalid or missing input data.</td>
+</tr>
+<tr style="height: 44px;">
+<td style="border-style: solid; border-width: 1px; height: 44px; padding: 0px;">403</td>
+<td style="border-style: solid; border-width: 1px; height: 44px; padding: 0px;">User is not authorized to access the specified topLevelFolder</td>
+<td style="border-style: solid; border-width: 1px; height: 44px; padding: 0px;">User is not authorized to access the specified topLevelFolder.</td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; padding: 0px;">500</td>
+<td style="border-style: solid; border-width: 1px; height: 22px; padding: 0px;">File metadata retrieval failed</td>
+<td style="border-style: solid; border-width: 1px; height: 22px; padding: 0px;">Failed to retrieve file metadata.</td>
+</tr>
+</tbody></table>
+<figcaption>&nbsp;</figcaption></figure><h2 id="h_01JX2HM7HMQ1892YMYV61BD919">3.4 Retrieving folder content information in the File Library</h2><p>Please refer to <a href="https://documenter.getpostman.com/view/28274243/2sB2qgfz3W#413244c2-8007-4532-821c-b428337212be" target="_blank" rel="noopener noreferrer">the Postman documentation for "List Folder Content"</a>for detailed information.</p><figure style="width: 100%;" class="wysiwyg-table wysiwyg-table-align-left"><table style="border-spacing: 0px; border-style: solid; border-width: 1px; margin-left: 0px; margin-right: auto;"><tbody>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;"><strong>HTTP Status Code</strong></td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;"><strong>Name</strong></td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;"><strong>Message Text</strong></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">400</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Invalid input data</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Invalid or missing input data.</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">403</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">Unauthorized user</td>
+<td style="border-style: solid; border-width: 1px; padding: 0px;">User is not authorized to access the specified topLevelFolder.</td>

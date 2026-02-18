@@ -1,0 +1,23 @@
+﻿def download_files_by_month(settings, remote_folder, pattern_keyword, month_keys):
+    try:
+        username = settings.get("username", USERNAME)
+        password = settings.get("password", PASSWORD)
+        fms_base = settings.get("host", FMS_BASE_URL_DEFAULT)
+
+        if not username or not password:
+            return False, "Chybďż˝ uďż˝ivatelskďż˝ jmďż˝no nebo heslo. Nastavte je v nastavenďż˝."
+
+        token = _get_bearer_token(username, password)
+        if not token:
+            return False, "Nepodaďż˝ilo se zďż˝skat autorizaďż˝nďż˝ token."
+
+        folder_path = remote_folder if remote_folder.startswith("/TP_export/") else f"/TP_export/{remote_folder}"
+        folder_json = _list_folder(fms_base, token, folder_path)
+        items = folder_json.get("contentItemList", [])
+
+        to_download = []
+        for item in items:
+            name = item.get("name", "")
+            if not name:
+                continue
+            if pattern_keyword in name and any(key in name for key in month_keys):

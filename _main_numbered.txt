@@ -1,0 +1,344 @@
+﻿0001: import tkinter as tk
+0002: from tkinter import ttk, filedialog, messagebox
+0003: import json
+0004: import os
+0005: import requests
+0006: from urllib.parse import urljoin
+0007: from datetime import datetime
+0008: from export_combined_excel import export_combined_excel
+0009: 
+0010: SETTINGS_FILE = "settings.json"
+0011: FMS_BASE_URL_DEFAULT = "https://fms.tp.entsoe.eu/"
+0012: KEYCLOAK_TOKEN_URL = "https://keycloak.tp.entsoe.eu/realms/tp/protocol/openid-connect/token"
+0013: USERNAME = "test"
+0014: PASSWORD = "test"
+0015: 
+0016: def load_settings():
+0017:     default_download = os.path.join(os.path.expanduser("~"), "Downloads")
+0018:     if os.path.exists(SETTINGS_FILE):
+0019:         with open(SETTINGS_FILE, "r") as f:
+0020:             return json.load(f)
+0021:     return {
+0022:         "host": FMS_BASE_URL_DEFAULT,
+0023:         "username": USERNAME,
+0024:         "password": PASSWORD,
+0025:         "download_path": default_download,
+0026:     }
+0027: 
+0028: def save_settings(data):
+0029:     with open(SETTINGS_FILE, "w") as f:
+0030:         json.dump(data, f)
+0031: 
+0032: def generate_month_keys(start_year, start_month, end_year, end_month):
+0033:     try:
+0034:         start = datetime(int(start_year), int(start_month), 1)
+0035:         end = datetime(int(end_year), int(end_month), 1)
+0036:     except ValueError:
+0037:         return []
+0038:     
+0039:     keys = []
+0040:     while start <= end:
+0041:         keys.append(start.strftime("%Y_%m"))
+0042:         if start.month == 12:
+0043:             start = datetime(start.year + 1, 1, 1)
+0044:         else:
+0045:             start = datetime(start.year, start.month + 1, 1)
+0046:     return keys
+0047: 
+0048: def download_files_by_month_sftp(settings, remote_folder, pattern_keyword, month_keys):
+0049:     try:
+0050:         transport = paramiko.Transport((settings['host'], 22))
+0051:         transport.connect(username=settings['username'], password=settings['password'])
+0052:         sftp = paramiko.SFTPClient.from_transport(transport)
+0053: 
+0054:         sftp.chdir(remote_folder)
+0055:         files = sftp.listdir()
+0056: 
+0057:         downloaded = []
+0058:         for f in files:
+0059:             if any(key in f for key in month_keys) and pattern_keyword in f:
+0060:                 local_path = os.path.join(settings['download_path'], f)
+0061:                 sftp.get(f, local_path)
+0062:                 downloaded.append(f)
+0063: 
+0064:         sftp.close()
+0065: 
+0066:         if not downloaded:
+0067:             return False, "Nenalezeny ĹľĂˇdnĂ© soubory pro zvolenĂ© obdobĂ­."
+0068:         return True, None
+0069: 
+0070:     except Exception as e:
+0071:         return False, f"Chyba pĹ™i stahovĂˇnĂ­: {str(e)}"
+0072: 
+0073: def _get_bearer_token(username: str, password: str, timeout: int = 30) -> str:
+0074:     data = {
+0075:         "client_id": "tp-fms-public",
+0076:         "grant_type": "password",
+0077:         "username": username,
+0078:         "password": password,
+0079:     }
+0080:     resp = requests.post(KEYCLOAK_TOKEN_URL, data=data, timeout=timeout)
+0081:     resp.raise_for_status()
+0082:     payload = resp.json()
+0083:     return payload.get("access_token", "")
+0084: 
+0085: 
+0086: def _list_folder(fms_base_url: str, token: str, path: str, page_size: int = 5000, timeout: int = 60):
+0087:     url = urljoin(fms_base_url, "listFolder")
+0088:     headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+0089:     if not path.endswith("/"):
+0090:         path = path + "/"
+0091:     body = {
+0092:         "path": path,
+0093:         "sorterList": [
+0094:             {"key": "periodCovered.from", "ascending": True}
+0095:         ],
+0096:         "pageInfo": {"pageIndex": 0, "pageSize": page_size},
+0097:     }
+0098:     resp = requests.post(url, headers=headers, json=body, timeout=timeout)
+0099:     resp.raise_for_status()
+0100:     return resp.json()
+0101: 
+0102: 
+0103: def _download_file_by_id(fms_base_url: str, token: str, file_id: str, local_path: str, timeout: int = 300):
+0104:     url = urljoin(fms_base_url, "downloadFileContent")
+0105:     headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+0106:     body = {
+0107:         "fileIdList": [file_id],
+0108:         "topLevelFolder": "TP_export",
+0109:         "downloadAsZip": False,
+0110:     }
+0111:     with requests.post(url, headers=headers, json=body, stream=True, timeout=timeout) as r:
+0112:         r.raise_for_status()
+0113:         with open(local_path, "wb") as f:
+0114:             for chunk in r.iter_content(chunk_size=1024 * 1024):
+0115:                 if chunk:
+0116:                     f.write(chunk)
+0117: 
+0118: 
+0119: def download_files_by_month(settings, remote_folder, pattern_keyword, month_keys):
+0120:     try:
+0121:         username = settings.get("username", USERNAME)
+0122:         password = settings.get("password", PASSWORD)
+0123:         fms_base = settings.get("host", FMS_BASE_URL_DEFAULT)
+0124: 
+0125:         if not username or not password:
+0126:             return False, "Chybďż˝ uďż˝ivatelskďż˝ jmďż˝no nebo heslo. Nastavte je v nastavenďż˝."
+0127: 
+0128:         token = _get_bearer_token(username, password)
+0129:         if not token:
+0130:             return False, "Nepodaďż˝ilo se zďż˝skat autorizaďż˝nďż˝ token."
+0131: 
+0132:         folder_path = remote_folder if remote_folder.startswith("/TP_export/") else f"/TP_export/{remote_folder}"
+0133:         folder_json = _list_folder(fms_base, token, folder_path)
+0134:         items = folder_json.get("contentItemList", [])
+0135: 
+0136:         to_download = []
+0137:         for item in items:
+0138:             name = item.get("name", "")
+0139:             if not name:
+0140:                 continue
+0141:             if pattern_keyword in name and any(key in name for key in month_keys):
+0142:                 file_id = item.get("fileId")
+0143:                 if file_id:
+0144:                     to_download.append((file_id, name))
+0145: 
+0146:         if not to_download:
+0147:             return False, "Nenalezeny ďż˝ďż˝dnďż˝ soubory pro zvolenďż˝ obdobďż˝."
+0148: 
+0149:         os.makedirs(settings['download_path'], exist_ok=True)
+0150:         for file_id, name in to_download:
+0151:             local_path = os.path.join(settings['download_path'], name)
+0152:             _download_file_by_id(fms_base, token, file_id, local_path)
+0153: 
+0154:         return True, None
+0155: 
+0156:     except requests.exceptions.SSLError as e:
+0157:         return False, (
+0158:             "Chyba ovÄ›Ĺ™enĂ­ TLS certifikĂˇtu (SSL). "
+0159:             "Zkuste nastavit cestu k firemnĂ­mu CA (PEM) do NastavenĂ­ nebo doÄŤasnÄ› vypnout ovÄ›Ĺ™ovĂˇnĂ­."
+0160:         )
+0161:     except requests.HTTPError as e:
+0162:         try:
+0163:             detail = e.response.text
+0164:         except Exception:
+0165:             detail = str(e)
+0166:         return False, f"Chyba pďż˝i stahovďż˝nďż˝ (HTTP): {detail}"
+0167:     except Exception as e:
+0168:         return False, f"Chyba pďż˝i stahovďż˝nďż˝: {str(e)}"
+0169: 
+0170: 
+0171: class SFTPDownloaderApp:
+0172:     def __init__(self, root):
+0173:         self.root = root
+0174:         self.root.title("ENTSO-E File Library Downloader")
+0175: 
+0176:         self.settings = load_settings()
+0177: 
+0178:         self.notebook = ttk.Notebook(root)
+0179:         self.notebook.pack(expand=1, fill="both")
+0180: 
+0181:         self.create_download_tab()
+0182:         self.create_settings_tab()
+0183:         self.create_description_tab()
+0184: 
+0185:     def create_download_tab(self):
+0186:         self.download_tab = ttk.Frame(self.notebook)
+0187:         self.notebook.add(self.download_tab, text="StaĹľenĂ­ dat")
+0188: 
+0189:         ttk.Label(self.download_tab, text="Vyberte typ dat:").grid(row=0, column=0, sticky="w", padx=10, pady=(10, 0))
+0190:         self.include_reserves = tk.BooleanVar()
+0191:         self.include_energy = tk.BooleanVar()
+0192:         ttk.Checkbutton(self.download_tab, text="RegulaÄŤnĂ­ zĂˇlohy", variable=self.include_reserves).grid(row=1, column=0, sticky="w", padx=20)
+0193:         ttk.Checkbutton(self.download_tab, text="RegulaÄŤnĂ­ energie", variable=self.include_energy).grid(row=2, column=0, sticky="w", padx=20)
+0194: 
+0195:         ttk.Label(self.download_tab, text="ObdobĂ­ (mÄ›sĂ­c a rok):").grid(row=3, column=0, sticky="w", padx=10, pady=(10, 0))
+0196:         self.start_month = tk.StringVar()
+0197:         self.start_year = tk.StringVar()
+0198:         self.end_month = tk.StringVar()
+0199:         self.end_year = tk.StringVar()
+0200: 
+0201:         months = ["Leden", "Ăšnor", "BĹ™ezen", "Duben", "KvÄ›ten", "ÄŚerven", "ÄŚervenec", "Srpen", "ZĂˇĹ™Ă­", "ĹĂ­jen", "Listopad", "Prosinec"]
+0202:         self.months_map = {m: f"{i+1:02d}" for i, m in enumerate(months)}
+0203:         current_year = datetime.now().year
+0204:         years = [str(y) for y in range(2022, current_year + 1)]
+0205: 
+0206:         ttk.Label(self.download_tab, text="Od:").grid(row=4, column=0, sticky="w", padx=20)
+0207:         self.start_month_cb = ttk.Combobox(self.download_tab, values=months, textvariable=self.start_month, width=12, state="readonly")
+0208:         self.start_year_cb = ttk.Combobox(self.download_tab, values=years, textvariable=self.start_year, width=6, state="readonly")
+0209:         self.start_month_cb.grid(row=5, column=0, sticky="w", padx=20)
+0210:         self.start_year_cb.grid(row=5, column=0, sticky="e", padx=20)
+0211: 
+0212:         ttk.Label(self.download_tab, text="Do:").grid(row=6, column=0, sticky="w", padx=20)
+0213:         self.end_month_cb = ttk.Combobox(self.download_tab, values=months, textvariable=self.end_month, width=12, state="readonly")
+0214:         self.end_year_cb = ttk.Combobox(self.download_tab, values=years, textvariable=self.end_year, width=6, state="readonly")
+0215:         self.end_month_cb.grid(row=7, column=0, sticky="w", padx=20)
+0216:         self.end_year_cb.grid(row=7, column=0, sticky="e", padx=20)
+0217: 
+0218:         ttk.Button(self.download_tab, text="Zpracovat data", command=self.download_data).grid(row=8, column=0, pady=20)
+0219: 
+0220:     def create_settings_tab(self):
+0221:         self.settings_tab = ttk.Frame(self.notebook)
+0222:         self.notebook.add(self.settings_tab, text="NastavenĂ­")
+0223: 
+0224:         ttk.Label(self.settings_tab, text="CĂ­lovĂˇ sloĹľka:").grid(row=0, column=0, sticky="w")
+0225:         self.path_var = tk.StringVar(value=self.settings.get("download_path", ""))
+0226:         self.entry_path = ttk.Entry(self.settings_tab, textvariable=self.path_var, width=40)
+0227:         self.entry_path.grid(row=0, column=1)
+0228:         ttk.Button(self.settings_tab, text="ProchĂˇzet", command=self.browse_folder).grid(row=0, column=2)
+0229: 
+0230:         ttk.Label(self.settings_tab, text="FMS host (API):").grid(row=1, column=0, sticky="w")
+0231:         self.host_var = tk.StringVar(value=self.settings.get("host", ""))
+0232:         ttk.Entry(self.settings_tab, textvariable=self.host_var, width=40).grid(row=1, column=1, sticky="w")
+0233: 
+0234:         ttk.Label(self.settings_tab, text="UĹľivatelskĂ© jmĂ©no:").grid(row=2, column=0, sticky="w")
+0235:         self.user_var = tk.StringVar(value=self.settings.get("username", ""))
+0236:         ttk.Entry(self.settings_tab, textvariable=self.user_var, width=40).grid(row=2, column=1, sticky="w")
+0237: 
+0238:         ttk.Label(self.settings_tab, text="Heslo:").grid(row=3, column=0, sticky="w")
+0239:         self.pass_var = tk.StringVar(value=self.settings.get("password", ""))
+0240:         ttk.Entry(self.settings_tab, textvariable=self.pass_var, show="*", width=40).grid(row=3, column=1, sticky="w")
+0241: 
+0242:         ttk.Button(self.settings_tab, text="UloĹľit nastavenĂ­", command=lambda: self.save(show_message=True)).grid(row=4, column=1, pady=10, sticky="w")
+0243: 
+0244:     def create_description_tab(self):
+0245:         self.description_tab = ttk.Frame(self.notebook)
+0246:         self.notebook.add(self.description_tab, text="Popis dat")
+0247: 
+0248:         text = (
+0249:             "Data v hodinovĂ˝ch intervalech jsou vypoÄŤĂ­tĂˇna jako aritmetickĂ© prĹŻmÄ›ry.\n"
+0250:             "Zdrojem dat je Transparency Platform ENTSO-E.\n\n"
+0251:             "ZdrojovĂˇ data pro regulaÄŤnĂ­ zĂˇlohy:\n" 
+0252:             "AmountAndPricesPaidOfBalancingReservesUnderContract.\n\n"
+0253:             "ZdrojovĂˇ data pro regulaÄŤnĂ­ energii:\n"
+0254:             "PricesOfActivatedBalancingEnergy.\n\n\n"
+0255:             "Autor programu: Josef VeselĂ˝\n\n"
+0256:             "@EY ~~VĹˇechna prĂˇva vyhrazena."
+0257:         )
+0258: 
+0259:         label = ttk.Label(self.description_tab, text=text, justify="left", wraplength=500)
+0260:         label.pack(padx=20, pady=20, anchor="w")
+0261: 
+0262:     def browse_folder(self):
+0263:         folder = filedialog.askdirectory()
+0264:         if folder:
+0265:             self.path_var.set(folder)
+0266: 
+0267:     def save(self, show_message=True):
+0268:         data = {
+0269:             "download_path": self.path_var.get(),
+0270:             "host": self.host_var.get(),
+0271:             "username": self.user_var.get(),
+0272:             "password": self.pass_var.get()
+0273:         }
+0274:         save_settings(data)
+0275:         self.settings = data
+0276:         if show_message:
+0277:             messagebox.showinfo("UloĹľeno", "NastavenĂ­ byla uloĹľena.")
+0278: 
+0279:     def download_data(self):
+0280:         self.save(show_message=False)
+0281: 
+0282:         sm = self.months_map.get(self.start_month.get())
+0283:         em = self.months_map.get(self.end_month.get())
+0284:         sy = self.start_year.get()
+0285:         ey = self.end_year.get()
+0286: 
+0287:         if not all([sm, em, sy, ey]):
+0288:             messagebox.showerror("Chyba", "Zadejte prosĂ­m celĂ© obdobĂ­ (mÄ›sĂ­c a rok).")
+0289:             return
+0290: 
+0291:         try:
+0292:             start_date = datetime(int(sy), int(sm), 1)
+0293:             end_date = datetime(int(ey), int(em), 1)
+0294:             if start_date > end_date:
+0295:                 messagebox.showerror("Chyba", "PoÄŤĂˇteÄŤnĂ­ mÄ›sĂ­c musĂ­ pĹ™edchĂˇzet koncovĂ©mu.")
+0296:                 return
+0297:         except ValueError:
+0298:             messagebox.showerror("Chyba", "NeplatnĂ© datum.")
+0299:             return
+0300: 
+0301:         if not self.include_reserves.get() and not self.include_energy.get():
+0302:             messagebox.showinfo("Hotovo", "Nebyla vybrĂˇna ĹľĂˇdnĂˇ datovĂˇ sada.")
+0303:             return
+0304: 
+0305:         messagebox.showinfo("ZpracovĂˇnĂ­", "SkoÄŤ si na kafe, data se zpracovĂˇvajĂ­...")
+0306: 
+0307:         keys = generate_month_keys(sy, sm, ey, em)
+0308:         reserves_success = False
+0309:         energy_success = False
+0310: 
+0311:         if self.include_reserves.get():
+0312:             success, _ = download_files_by_month(
+0313:                 self.settings,
+0314:                 "/TP_export/AmountAndPricesPaidOfBalancingReservesUnderContract_17.1.B_C_r2",
+0315:                 "AmountAndPricesPaidOfBalancingReservesUnderContract",
+0316:                 keys
+0317:             )
+0318:             if success:
+0319:                 reserves_success = True
+0320: 
+0321:         if self.include_energy.get():
+0322:             success, _ = download_files_by_month(
+0323:                 self.settings,
+0324:                 "/TP_export/PricesOfActivatedBalancingEnergy_17.1.F_r3",
+0325:                 "PricesOfActivatedBalancingEnergy",
+0326:                 keys
+0327:             )
+0328:             if success:
+0329:                 energy_success = True
+0330: 
+0331:         if (self.include_reserves.get() and reserves_success) or (self.include_energy.get() and energy_success):
+0332:             excel_path = export_combined_excel(self.settings["download_path"])
+0333:             if excel_path:
+0334:                 messagebox.showinfo("Hotovo", f"VĂ˝stupnĂ­ Excel byl uloĹľen zde: {excel_path}")
+0335:             else:
+0336:                 messagebox.showinfo("Hotovo", "Filtrace: Nebyla nalezena ĹľĂˇdnĂˇ pouĹľitelnĂˇ data.")
+0337:         else:
+0338:             messagebox.showinfo("Hotovo", "Nebyla nalezena ĹľĂˇdnĂˇ pouĹľitelnĂˇ data.")
+0339: 
+0340: if __name__ == "__main__":
+0341:     root = tk.Tk()
+0342:     app = SFTPDownloaderApp(root)
+0343:     root.mainloop()
+0344: 

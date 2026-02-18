@@ -1,0 +1,17 @@
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Build outputs
+build/
+dist/
+
+# Local settings and secrets
+settings.json
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.log

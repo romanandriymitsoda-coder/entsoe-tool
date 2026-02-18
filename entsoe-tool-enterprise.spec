@@ -1,0 +1,38 @@
+# -*- mode: python ; coding: utf-8 -*-
+
+
+a = Analysis(
+    ['main.py'],
+    pathex=[],
+    binaries=[],
+    datas=[],
+    hiddenimports=['pip_system_certs', 'wincertstore', 'certifi_win32'],
+    hookspath=[],
+    hooksconfig={},
+    runtime_hooks=['hooks\\pyi_rth_certifi_win32.py', 'hooks\\pyi_rth_pip_system_certs.py', 'hooks\\pyi_rth_requests_certifi_env.py'],
+    excludes=[],
+    noarchive=False,
+    optimize=0,
+)
+pyz = PYZ(a.pure)
+
+exe = EXE(
+    pyz,
+    a.scripts,
+    a.binaries,
+    a.datas,
+    [],
+    name='entsoe-tool-enterprise',
+    debug=False,
+    bootloader_ignore_signals=False,
+    strip=False,
+    upx=True,
+    upx_exclude=[],
+    runtime_tmpdir=None,
+    console=False,
+    disable_windowed_traceback=False,
+    argv_emulation=False,
+    target_arch=None,
+    codesign_identity=None,
+    entitlements_file=None,
+)
