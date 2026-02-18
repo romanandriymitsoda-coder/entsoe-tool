@@ -227,7 +227,7 @@ class FileLibraryDownloaderApp:
             "AmountAndPricesPaidOfBalancingReservesUnderContract.\n\n"
             "Zdrojová data pro regulační energii:\n"
             "PricesOfActivatedBalancingEnergy.\n\n\n"
-            "Autor programu: Josef Veselý\n\n"
+            "Autor programu: Roman Andriy Mitsoda\n\n"
             "@EY ~~Všechna práva vyhrazena."
         )
 
